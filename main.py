@@ -38,6 +38,7 @@ async def suggest(ctx, suggestion):
     )
     channel = bot.get_channel(1145716515006578862)
     msg = await channel.send(embed=embed)
+    await ctx.send("Suggestion sent!!")
     await msg.add_reaction("👍")
     await msg.add_reaction("👎")
 
