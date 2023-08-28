@@ -3,7 +3,13 @@ import os
 from dotenv import load_dotenv
 
 
-bot = discord.Bot()
+intents = discord.Intents()
+intents.members = True
+intents.presences = True
+intents.message_content = True
+
+bot = discord.Bot(intents=intents)
+
 
 @bot.event
 async def on_ready():
@@ -12,6 +18,17 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     print(f"new user {member.name}")
+    if bot.get_channel(1145759009127805039) == None:
+        channel = await bot.fetch_channel(1145759009127805039)
+    else:
+        channel = await bot.get_channel(1145759009127805039)
+    embed = discord.Embed(
+        title=f"{member.mention} has joined the server!",
+        color=2829617       
+    )
+    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
+    channel = await bot.fetch_channel(1145759009127805039)
+    await channel.send(embed=embed)
 
 
 
