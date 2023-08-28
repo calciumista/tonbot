@@ -21,6 +21,7 @@ async def hangout(ctx):
         color=2829617
     )
     embed.set_image(url="https://i.vgy.me/2tycpD.png")
+    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
     await ctx.respond(embed=embed)
 
 
@@ -31,6 +32,8 @@ async def shlexhangout(ctx):
         color=2829617
     )
     embed.set_image(url="https://i.vgy.me/61x9Oy.png")
+    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
+
     await ctx.respond(embed=embed)
 
 @bot.slash_command(description='suggest ton features!', guild_ids=['1144777754894676081'])
@@ -40,6 +43,7 @@ async def suggest(ctx, suggestion):
         description=suggestion,
         color=2829617
     )
+    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
     channel = bot.get_channel(1145716515006578862)
     msg = await channel.send(embed=embed)
     await msg.add_reaction("👍")
