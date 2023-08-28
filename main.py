@@ -9,6 +9,10 @@ bot = discord.Bot()
 async def on_ready():
     print(f"We have logged in as {bot.user}")
 
+@bot.event
+async def on_member_join(member):
+    print(f"new user {member.name}")
+
 
 
 @bot.slash_command(description='ton is not a hangout!!', guild_ids=['1144777754894676081'])
