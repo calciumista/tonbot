@@ -18,4 +18,4 @@ async def my_command_function(ctx: interactions.SlashContext):
     embed.add_image('https://i.vgy.me/61x9Oy.png')
     await ctx.send(embed=embed)
 
-bot.start("MTE0NTYxNDI0NTM4NDQ0MTg1Nw.GGKkZa.Nfq8TruQ_CMZYk9xxFhe1PEelD8UFEovUxT6vE")
+bot.start("")
