@@ -24,7 +24,7 @@ async def on_member_join(member):
         channel = await bot.get_channel(1145759009127805039)
     embed = discord.Embed(
         title=f"Welcome {member.display_name}!",
-        description=f"{member.mention} has joined the TON server.",
+        description=f"{member.mention} has joined the server.",
         color=2829617       
     )
     embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
