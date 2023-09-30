@@ -24,11 +24,9 @@ async def on_member_join(member):
         channel = await bot.get_channel(1145759009127805039)
     embed = discord.Embed(
         title=f"Welcome {member.display_name}!",
-        description=f"{member.mention} has joined the TON server.",
+        description=f"{member.mention} has joined TON.",
         color=2829617       
     )
-    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
-    channel = await bot.fetch_channel(1145759009127805039)
     await channel.send(embed=embed)
 
 
@@ -39,7 +37,6 @@ async def hangout(ctx):
         color=2829617
     )
     embed.set_image(url="https://i.vgy.me/2tycpD.png")
-    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
     await ctx.respond(embed=embed)
 
 
@@ -50,7 +47,6 @@ async def shlexhangout(ctx):
         color=2829617
     )
     embed.set_image(url="https://i.vgy.me/61x9Oy.png")
-    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
 
     await ctx.respond(embed=embed)
 
@@ -61,13 +57,21 @@ async def suggest(ctx, suggestion):
         description=suggestion,
         color=2829617
     )
-    embed.set_footer(text="bot by calcium", icon_url='https://calcal.space/favicon.png')
-    channel = bot.get_channel(1145716515006578862)
+    channel = await bot.fetch_channel(1145716515006578862)
     msg = await channel.send(embed=embed)
     await msg.add_reaction("👍")
     await msg.add_reaction("👎")
     await ctx.respond("Suggestion sent!", ephemeral=True)
 
+@bot.slash_command(description='bot made by calcium', guild_ids=['1144777754894676081'])
+async def credits(ctx):
+    embed = discord.Embed(
+        title="this bot was made by calcium",
+        color=2829617,
+        description="you can see some of my web development work at https://calcal.space"
+    )
+
+    await ctx.respond(embed=embed)
 
 load_dotenv()
 
