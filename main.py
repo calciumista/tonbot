@@ -24,11 +24,7 @@ async def on_member_join(member):
         channel = await bot.get_channel(1145759009127805039)
     embed = discord.Embed(
         title=f"Welcome {member.display_name}!",
-<<<<<<< HEAD
         description=f"{member.mention} has joined TON.",
-=======
-        description=f"{member.mention} has joined the server.",
->>>>>>> 07fa4217d5ceb4e1b885abdb0d54b5eb13c4e1a3
         color=2829617       
     )
     await channel.send(embed=embed)
